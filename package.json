@@ -2,7 +2,7 @@
   "name": "random-material-color",
   "version": "1.0.0",
   "description": "Generate a Random Color from Google Material UI palette",
-  "main": "randomColor.js",
+  "main": "./dist/randomColor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/isuru88/random-material-color/issues"
   },
-  "homepage": "https://github.com/isuru88/random-material-color"
+  "homepage": "https://github.com/isuru88/random-material-color",
+  "dependencies": {
+    "murmurhash-js": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-uglify": "^1.2.0"
+  }
 }
