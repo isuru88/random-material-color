@@ -7,13 +7,14 @@ module.exports = function() {
         defaultOptions = {
             shades: ['500'],
             palette: defaultPalette,
-            text: null
+            text: null,
+			ignoreColors: []
         },
 
         getColor = function (options) {
             options || (options = defaultOptions);
             options.palette || (options.palette = defaultPalette);
-            options.shades || (options.shades = ['500']);
+            options.shades || (options.shades = ['500']);			
 
             var l = usedColors.length,
                 color;
@@ -25,6 +26,7 @@ module.exports = function() {
             }
 
             color = pickColor(options);
+			
             if (options.text) {
                 usedColors.push({text: options.text, color: color});
             }
@@ -56,6 +58,10 @@ module.exports = function() {
 
         getHashedInt = function (text, max) {
             var hash = murmur.murmur3(text) / 10000000000; // Turn it into a fraction
+			console.log(' ' + hash);
+			if(hash < 0.1){
+				hash = hash * 10;
+			}			
             return Math.floor(hash * (max));
         };
 

@@ -1,8 +1,8 @@
 {
   "name": "random-material-color",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Generate a Random Color from Google Material UI palette",
-  "main": "./dist/randomColor.js",
+  "main": "dist/randomColor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
