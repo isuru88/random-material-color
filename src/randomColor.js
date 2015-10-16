@@ -58,7 +58,6 @@ module.exports = function() {
 
         getHashedInt = function (text, max) {
             var hash = murmur.murmur3(text) / 10000000000; // Turn it into a fraction
-			console.log(' ' + hash);
 			if(hash < 0.1){
 				hash = hash * 10;
 			}			
