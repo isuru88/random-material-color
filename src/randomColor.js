@@ -35,7 +35,13 @@ module.exports = function() {
         },
 
         pickColor = function (options) {
-            var shade = options.shades[getRandomInt(options.shades.length)];
+	    var shade = '';
+	    if (options.text) {
+            	shade = options.shades[getHashedInt(options.text, options.shades.length)];
+	    }
+	    else {
+            	shade = options.shades[getRandomInt(options.shades.length)];
+	    }
             var color = '';
 
             for (var key in options.palette) {
