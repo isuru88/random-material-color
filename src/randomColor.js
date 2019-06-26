@@ -35,14 +35,15 @@ module.exports = function() {
         },
 
         pickColor = function (options) {
-	    var shade = '';
-	    if (options.text) {
-            	shade = options.shades[getHashedInt(options.text, options.shades.length)];
-	    }
-	    else {
-            	shade = options.shades[getRandomInt(options.shades.length)];
-	    }
+            var shade = '';
             var color = '';
+            
+            if (options.text) {
+                shade = options.shades[getHashedInt(options.text, options.shades.length)];
+            }
+            else {
+                shade = options.shades[getRandomInt(options.shades.length)];
+            }
 
             for (var key in options.palette) {
                 if (options.palette.hasOwnProperty(key) && key === shade) {
@@ -64,7 +65,7 @@ module.exports = function() {
 
         getHashedInt = function (text, max) {
             var hash = murmur.murmur3(text) / 10000000000; // Turn it into a fraction
-			if(hash < 0.1){
+			if (hash < 0.1) {
 				hash = hash * 10;
 			}			
             return Math.floor(hash * (max));
