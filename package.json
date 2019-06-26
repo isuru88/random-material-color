@@ -1,6 +1,6 @@
 {
   "name": "random-material-color",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate a Random Color from Google Material UI palette",
   "main": "dist/randomColor.js",
   "scripts": {
